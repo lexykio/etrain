@@ -1,5 +1,5 @@
 const helpers = require('./helpers.jsx');
 
-var name = helpers.cleanLinkedIn('www.neopets.com/lexyk');
+var name = helpers.cleanLinkedIn('https://www.linkedin.com/in/lexyk/');
 
 console.log(name);

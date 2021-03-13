@@ -22,7 +22,6 @@ class CheckPresence extends React.Component {
 
 
   handleChange(event) {
-
     this.setState({
       linkedInLink: event.target.value,
     });
@@ -31,7 +30,10 @@ class CheckPresence extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
 
+    console.log('hey')
+    
     let linkedInName = helpers.cleanLinkedIn(this.state.linkedInLink);
+    console.log(linkedInName)
 
     if(!linkedInName) {
       this.setState({

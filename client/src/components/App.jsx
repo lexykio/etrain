@@ -45,7 +45,7 @@ class App extends React.Component {
 
   }
 
-  setPersonData (data) {
+  setPersonData(data) {
 
     data = data[0];
 
@@ -62,7 +62,7 @@ class App extends React.Component {
         linkedin: data.linkedin,
         cohort_id: data.cohort_id,
         person_id: data.id,
-        inSystem: 'logedin',
+        inSystem: 'loggedin',
         currentPage: 'Welcome',
       })
 

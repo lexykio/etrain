@@ -3,6 +3,8 @@ import axios from 'axios';
 
 const getUserByLinkedIn = (name, cb) => {
 
+  console.log(name);
+
   let data = JSON.stringify({"linkedin": name});
 
   // Set up request config

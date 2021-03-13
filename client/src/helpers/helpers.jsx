@@ -4,11 +4,14 @@ const cleanLinkedIn = (fullLink) => {
   let name = null;
   /// Try first matching to the https link
   // eslint-disable-next-line no-useless-escape
-  if(fullLink.match('https:\/\/www\.linkedin\.com\/in\/([a-zA-Z0123456789-]+)')) {
-    name = fullLink.match('https:\/\/www\.linkedin\.com\/in\/([a-zA-Z0123456789-]+)')[1];
+  const matchV1 = fullLink.match('https:\/\/www\.linkedin\.com\/in\/([a-zA-Z0123456789-]+)');
+  const matchV2 = fullLink.match('www\.linkedin\.com\/in\/([a-zA-Z0123456789-]+)');
+
+  if(matchV1) {
+    name = matchV1[1];
     console.log('first matched:', name)
-  } else if (fullLink.match('www\.linkedin\.com\/in\/([a-zA-Z0123456789-]+)')){
-    name = fullLink.match('www\.linkedin\.com\/in\/([a-zA-Z0123456789-]+)')[1];
+  } else if (matchV2){
+    name = matchV2[1];
     console.log('second matched:', name)
   }
  

@@ -126,6 +126,12 @@ class Welcome extends React.Component {
 
         <h3> Lets keep the Karma Rolling!</h3>
         {connectionLinks}
+        {/* list of react components- each item contains a linkedin link for a person, two buttons:
+        1. friended/ friend
+        2. endorse
+
+        person is only removed from queue if endorsed
+         */}
       </div>
     );
   }
