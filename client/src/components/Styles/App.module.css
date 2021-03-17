@@ -25,10 +25,17 @@ input, select {
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
+  transition-duration: 100ms;
+}
+
+input[type="submit"]:hover {
+  cursor: pointer;
+  background-color: #dbdbdb;
+  border: 1px solid #c2c2c2;
 }
 
 button {
-  background-color: #4CAF50;
+  background-color: #a3a3a3;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -45,4 +52,7 @@ button:hover {
   padding: 16px;
 }
 
-
+:global(.warning) {
+  color: red;
+  font-size: 14px;
+}

@@ -9,10 +9,10 @@ const cleanLinkedIn = (fullLink) => {
 
   if(matchV1) {
     name = matchV1[1];
-    console.log('first matched:', name)
+    // console.log('first matched:', name)
   } else if (matchV2){
     name = matchV2[1];
-    console.log('second matched:', name)
+    // console.log('second matched:', name)
   }
  
   return(name)

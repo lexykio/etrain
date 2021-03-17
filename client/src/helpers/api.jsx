@@ -3,27 +3,32 @@ import axios from 'axios';
 
 const getUserByLinkedIn = (name, cb) => {
 
-  console.log(name);
-
   let data = JSON.stringify({"linkedin": name});
+
 
   // Set up request config
   var config = {
-    method: 'post',
-    url: '/person/linkedin',
+    method: 'get',
+    url: `/person/${name}`,
     headers: {
       'Content-Type': 'application/json'
-    },
-    data : data
+    }
   };
 
+
+  // axios.post('/person/linkedin', data)
+ 
+
   axios(config)
-  .then(function (response) {
+  .then((response)=> {
     cb(null, response.data);
   })
-  .catch(function (error) {
-    cb(error);
-  });
+  // .then(function (response) {
+  //   cb(null, response.data);
+  // })
+  // .catch(function (error) {
+  //   cb(error);
+  // });
 
 } // End getUserByLinkedIn
 

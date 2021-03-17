@@ -1,7 +1,4 @@
 import React from 'react';
-import $ from 'jquery';
-
-
 import helpers from '../helpers/helpers.jsx'
 import api from '../helpers/api.jsx'
 
@@ -29,17 +26,18 @@ class CheckPresence extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-
-    console.log('hey')
     
     let linkedInName = helpers.cleanLinkedIn(this.state.linkedInLink);
-    console.log(linkedInName)
 
     if(!linkedInName) {
       this.setState({
         bad_formatting: true
       })
       return;
+    } else {
+      this.setState({
+        bad_formatting: false
+      })
     }
 
     api.getUserByLinkedIn(linkedInName, (err, data) => {
@@ -58,23 +56,23 @@ class CheckPresence extends React.Component {
   render() {
 
     return (
-      // <div>
-      //   <div>
-      //     <h3>Welcome to the Endorsement Train</h3>
-      //     Lets me check your ticket:
-      //   </div>
+      <div>
+        {/* <div>
+          <h3>Welcome to the Endorsement Train</h3>
+          Lets me check your ticket:
+        </div> */}
 
         <form onSubmit={this.handleSubmit}>
           <label>
-            Please Paste Linkedin Link:
+            Please Paste Linkedin Profile Link:
             <input type="text" value={this.state.linkedInLink} onChange={this.handleChange} />
           </label>
           {this.state.bad_formatting &&
-            <h2> That linkedIn link did not work, try pasting the link from a browser</h2>
+            <span className="warning">Not a valid Linkedin url! Navigate to your Linkedin profile and copy the link directly from the browser.</span>
           }
           <input type="submit" value="Submit" />
         </form>
-      // </div>
+      </div>
     );
   }
 }

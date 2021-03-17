@@ -47,7 +47,9 @@ class App extends React.Component {
 
   setPersonData(data) {
 
-    data = data[0];
+    console.log("WOOOOHOOOO", data)
+
+    // data = data[0];
 
     if (data.hasOwnProperty('empty')) {
       this.setState({
@@ -73,7 +75,6 @@ class App extends React.Component {
   render() {
 
     let pageMap = {
-      // 'welcome': <WelcomePage swtichPagaes={this.swtichPagaes} setSessionInfo={this.setSessionInfo} initSocket={this.initSocket} />,
       'AddUser' : <AddUser first_name={this.state.first_name}/>,
       'Welcome' : <Welcome
       person_id = {this.state.person_id}
