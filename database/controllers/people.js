@@ -58,7 +58,6 @@
 
 const sequelize = require('../index.js');
 
-
 const getPersonByLinkedIn = (data, cb) => {
   sequelize.query(`SELECT * FROM people WHERE linkedin = "${data}";`, { type: sequelize.QueryTypes.SELECT })
   .then(user => {
